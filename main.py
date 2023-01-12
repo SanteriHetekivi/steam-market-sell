@@ -226,7 +226,7 @@ for description in data["descriptions"]:
     ).json()
 
     # Getting priceoverview failed.
-    if "success" not in priceoverview or not priceoverview["success"]:
+    if type(priceoverview) is not dict or "success" not in priceoverview or not priceoverview["success"]:
         raise Exception("priceoverview failed!", priceoverview)
 
     # Get integer and fractional from currency string.
